@@ -1,0 +1,28 @@
+kind = "data-app"
+previewPath = "/"
+title = "E-Waste Intelligence"
+description = "An interactive sustainability analytics dashboard for comparing formal and informal e-waste recycling across India using the provided synthetic dataset."
+version = "1.0.0"
+id = "artifacts/e-waste-intelligence"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24600
+
+[services.development]
+run = "pnpm --filter @workspace/e-waste-intelligence run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/e-waste-intelligence", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/e-waste-intelligence/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24600"
+BASE_PATH = "/"

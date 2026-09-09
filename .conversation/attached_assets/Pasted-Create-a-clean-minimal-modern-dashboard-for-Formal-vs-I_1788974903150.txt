@@ -1,0 +1,121 @@
+Create a **clean, minimal, modern dashboard for Formal vs Informal E-Waste Recycling in India** using these two CSV files:
+
+* `e_waste_formal_informal_india_dashboard.csv`
+* `e_waste_dataset_data_dictionary.csv`
+
+Use the CSV as the actual data source. Do not hard-code values or create fake data.
+
+### Design
+
+* Light, clean background
+* Minimal cards
+* Green/teal sustainability theme
+* Dark text
+* Simple professional typography
+* Subtle animations
+* Responsive design
+* Use React + TypeScript + Tailwind CSS + Recharts
+
+### Dashboard
+
+Header:
+
+**E-Waste Intelligence**
+*Formal vs Informal Recycling in India*
+
+Add filters for:
+
+* Year
+* State
+* City
+* E-Waste Type
+* Sector (Formal/Informal)
+* Collection Channel
+* Reset Filters button
+
+### KPI Cards
+
+Show:
+
+* Total E-Waste Collected
+* Formal Collection
+* Informal Collection
+* Material Recovered
+* Recovery Rate
+* Jobs Supported
+
+### Charts
+
+Create these charts:
+
+1. **Monthly E-Waste Collection**
+
+   * Formal vs Informal vs Total
+
+2. **Formal vs Informal Share**
+
+   * Donut chart
+
+3. **E-Waste by State**
+
+   * Bar chart
+
+4. **Top 10 Cities**
+
+   * Bar chart
+
+5. **Recovery Rate by E-Waste Type**
+
+   * Bar chart
+
+6. **Recycling Methods**
+
+   * Donut/bar chart
+
+7. **Material Recovery**
+
+   * Bar chart
+
+8. **Compliance & Worker Safety**
+
+   * Compare Formal vs Informal
+
+9. **Revenue by Sector**
+
+   * Formal vs Informal
+
+### Data Table
+
+At the bottom add a searchable and sortable table showing:
+
+* Date
+* City
+* State
+* E-Waste Type
+* Sector
+* Collection Channel
+* Collected
+* Recovered
+* Recovery Rate
+
+Add pagination.
+
+### Important
+
+All KPIs and charts must update when filters are changed.
+
+Calculate recovery rate using:
+
+`total recovered / total collected × 100`
+
+Do not simply average the existing recovery-rate column.
+
+Format weights in kg/tonnes, currency in Indian ₹ format, and percentages to one decimal place.
+
+Add a small note:
+
+**"Synthetic dataset for educational and demonstration purposes."**
+
+Keep the dashboard visually simple. Avoid excessive colors, gradients, animations, and unnecessary features.
+
+Make the final result look like a **professional sustainability analytics dashboard**, not a generic admin panel.

@@ -5,9 +5,6 @@
  * API specification
  * OpenAPI spec version: 0.1.0
  */
-export interface HealthStatus {
-  status: string;
-}
 
 export interface EWasteRecord {
   record_id: string;
@@ -38,4 +35,3 @@ export interface EWasteRecord {
   informal_share_pct: number;
   recovery_value_inr_per_kg: number;
 }
-

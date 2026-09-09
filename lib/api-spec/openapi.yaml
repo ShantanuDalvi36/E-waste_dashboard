@@ -10,6 +10,8 @@ servers:
 tags:
   - name: health
     description: Health operations
+  - name: e-waste
+    description: E-waste intelligence data
 paths:
   /healthz:
     get:
@@ -24,6 +26,21 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /e-waste/data:
+    get:
+      operationId: getEWasteData
+      tags: [e-waste]
+      summary: Get the e-waste dashboard dataset
+      description: Returns the uploaded synthetic e-waste collection records used by the dashboard.
+      responses:
+        "200":
+          description: E-waste collection records
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/EWasteRecord"
 components:
   schemas:
     HealthStatus:
@@ -33,4 +50,62 @@ components:
           type: string
       required:
         - status
+    EWasteRecord:
+      type: object
+      properties:
+        record_id: { type: string }
+        collection_month: { type: string }
+        year: { type: integer }
+        month: { type: integer }
+        month_name: { type: string }
+        city: { type: string }
+        state: { type: string }
+        e_waste_type: { type: string }
+        collection_channel: { type: string }
+        sector: { type: string }
+        e_waste_collected_kg: { type: number }
+        formal_collected_kg: { type: number }
+        informal_collected_kg: { type: number }
+        material_recovered_kg: { type: number }
+        disposed_kg: { type: number }
+        hazardous_kg: { type: number }
+        estimated_jobs_supported: { type: integer }
+        estimated_revenue_inr: { type: number }
+        recovery_rate_pct: { type: number }
+        compliance_score_pct: { type: number }
+        worker_safety_score_pct: { type: number }
+        primary_material: { type: string }
+        recycling_method: { type: string }
+        quarter: { type: string }
+        formal_share_pct: { type: number }
+        informal_share_pct: { type: number }
+        recovery_value_inr_per_kg: { type: number }
+      required:
+        - record_id
+        - collection_month
+        - year
+        - month
+        - month_name
+        - city
+        - state
+        - e_waste_type
+        - collection_channel
+        - sector
+        - e_waste_collected_kg
+        - formal_collected_kg
+        - informal_collected_kg
+        - material_recovered_kg
+        - disposed_kg
+        - hazardous_kg
+        - estimated_jobs_supported
+        - estimated_revenue_inr
+        - recovery_rate_pct
+        - compliance_score_pct
+        - worker_safety_score_pct
+        - primary_material
+        - recycling_method
+        - quarter
+        - formal_share_pct
+        - informal_share_pct
+        - recovery_value_inr_per_kg
 

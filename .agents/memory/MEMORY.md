@@ -1,0 +1,1 @@
+- [Artifact workflow working directories](artifact-workflow-working-directory.md) — managed artifact services run from their package directory, so runtime file paths should resolve from that working directory.
